@@ -138,7 +138,7 @@ const Header = () => {
         classes={{ paper: classes.drawer }}
         anchor="right"
       >
-        <div className={classes.toolbarMargin} />
+        {/* <div className={classes.toolbarMargin} /> */}
         <List disablePadding>
           {path.map(({ name, link }) => (
             <ListItem
@@ -195,7 +195,7 @@ const Header = () => {
         </AppBar>
       </ElevationScroll>
 
-      <div className={classes.toolbarMargin} />
+      {/* <div className={classes.toolbarMargin} /> */}
     </>
   );
 };

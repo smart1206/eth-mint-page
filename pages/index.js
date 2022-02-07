@@ -1,7 +1,7 @@
 import Layout from "components/layout/Layout";
 import Banner from "components/Banner";
+import Career from "components/Career";
 
-import { Container, Grid, Typography, Avatar, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +29,7 @@ const About = () => {
       description="This is a Template using Next.js and Material-UI with Header and Footer."
     >
       <Banner />
+      <Career />
     </Layout>
   );
 };

@@ -3,7 +3,8 @@ import { Box, Typography, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
-    marginInline: "auto"
+    marginInline: "auto",
+    minHeight: "700px"
   },
   moshiImg: {
     [theme.breakpoints.down("xs")]: {
