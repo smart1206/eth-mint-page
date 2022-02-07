@@ -14,6 +14,8 @@ import {
   ListItemText,
   SwipeableDrawer,
   IconButton,
+  Box,
+  Button
 } from "@material-ui/core";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 
@@ -62,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
     width: `50px`,
     color: `#fff`,
     [theme.breakpoints.down("xs")]: {
-      height: `40px`,
-      width: `40px`,
+      height: `30px`,
+      width: `30px`,
     },
   },
   drawer: {
@@ -77,6 +79,27 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.info.main,
     },
   },
+  logo: {
+    [theme.breakpoints.down("xs")]: {
+      width: "150px",
+      height: "18px"
+    },
+    width: "400px",
+    height: "50px"
+  },
+  icons: {
+    width: "50px",
+    height: "50px",
+    marginRight: "50px"
+  },
+  connect: {
+    [theme.breakpoints.down("xs")]: {
+      width: "100px",
+      height: "19px"
+    },
+    width: "200px",
+    height: "30px"
+  }
 }));
 
 const Header = () => {
@@ -93,19 +116,11 @@ const Header = () => {
 
   const tabs = (
     <>
-      <Grid container justifyContent="flex-end" spacing={4}>
+      <Grid container justifyContent="center">
         {path.map(({ name, link }) => (
           <Grid item key={link}>
             <Link href={link}>
-              <Typography
-                className={classes.link}
-                style={{
-                  fontWeight: router.pathname === link && "bold",
-                  borderBottom: router.pathname === link && "1px solid #757ce8",
-                }}
-              >
-                {name}
-              </Typography>
+              <img className={classes.icons} src={`${name}.svg`}></img>
             </Link>
           </Grid>
         ))}
@@ -136,17 +151,7 @@ const Header = () => {
             >
               <ListItemText disableTypography>
                 <Link href={link}>
-                  <Typography
-                    style={{
-                      color:
-                        router.pathname === link
-                          ? "primary"
-                          : "rgb(107 107 107)",
-                      fontWeight: router.pathname === link && "bold",
-                    }}
-                  >
-                    {name}
-                  </Typography>
+                  <img className={classes.icons} src={`${name}.svg`}></img>
                 </Link>
               </ListItemText>
             </ListItem>
@@ -165,7 +170,7 @@ const Header = () => {
   return (
     <>
       <ElevationScroll>
-        <AppBar className={classes.appBar}>
+        <AppBar position="sticky" className={classes.appBar}>
           <Toolbar
             disableGutters
             style={{
@@ -173,12 +178,18 @@ const Header = () => {
               margin: "0 auto",
               width: "100%",
               padding: matches ? "0 16px" : "24px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
             }}
           >
             <Link href="/">
-              <Typography className={classes.logo}>Material-UI</Typography>
+              <img className={classes.logo} src="moshi_mochi.svg"></img>
             </Link>
             {matches ? drawer : tabs}
+            <Button>
+              <img className={classes.connect} src="connect.svg"></img>
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

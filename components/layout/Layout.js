@@ -56,9 +56,20 @@ const Layout = ({ children, title, description, ogImage, url }) => {
       <Footer />
       <style jsx global>
         {`
+          @font-face {
+            font-family: 'Gotham Rounded';
+            src: url('fonts/Gotham-Rounded-Bold.woff') format('opentype');
+            font-style: normal;
+            font-weight: normal;
+            text-rendering: optimizeLegibility;
+          }
           html,
           body {
-            background: #f9f9f9;
+            background-image: url(bg.svg);
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
             overflow-x: hidden;
             padding: 0 !important;
           }

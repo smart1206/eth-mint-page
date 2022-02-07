@@ -1,7 +1,7 @@
 import { createTheme } from "@material-ui/core/styles";
 
-const mainBlack = "#212121";
-const mainWhite = "#fafafa";
+const mainBlack = "#63b8cc";
+const mainWhite = "#63b8cc";
 const blue = "#757ce8";
 // Create a theme instance.
 const theme = createTheme({
@@ -23,7 +23,9 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: "2.25rem",
+      fontFamily: "Gotham Rounded",
+      fontSize: "1.875rem",
+      color: "#fff",
       fontWeight: 500,
     },
     h2: {
