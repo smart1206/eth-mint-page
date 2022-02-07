@@ -187,9 +187,10 @@ const Header = () => {
               <img className={classes.logo} src="moshi_mochi.svg"></img>
             </Link>
             {matches ? drawer : tabs}
-            <Button>
+            <button style={{ background: "transparent", border: "none", cursor: "pointer" }}
+              onClick={() => alert('wallet connect')}>
               <img className={classes.connect} src="connect.svg"></img>
-            </Button>
+            </button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

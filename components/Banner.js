@@ -1,10 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
-    marginInline: "auto",
-    minHeight: "1000px"
+    marginInline: "auto"
   },
   moshiImg: {
     [theme.breakpoints.down("xs")]: {
@@ -17,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: "270px",
     height: "70px",
     outline: "transparent solid 2px",
+    appearance: "none",
     fontSize: "1.5rem",
     fontWeight: "700",
     borderRadius: "5px",
@@ -25,7 +25,19 @@ const useStyles = makeStyles((theme) => ({
     background: "#fff",
     color: "#000",
     textAlign: "center",
-    margintTop: "30px"
+    marginTop: "30px"
+  },
+  connectBtn: {
+    background: "#aeffad",
+    borderRadius: "5px",
+    minWidth: "260px",
+    paddingInline: "20px",
+    height: "70px",
+    fontSize: "1.5rem",
+    fontWeight: 700,
+    marginTop: "20px",
+    color: "#fff",
+    textTransform: "uppercase",
   }
 }));
 
@@ -37,6 +49,7 @@ const Banner = () => {
       <img src="moshi_mochi.svg" className={classes.moshiImg}></img>
       <Typography align="center" variant="h1">0/8000 MOCHI MINTED AT 0.035 ETH EACH</Typography>
       <input type="number" className={classes.mintCount} />
+      <Button className={classes.connectBtn}>Connect</Button>
     </Box>
   )
 }

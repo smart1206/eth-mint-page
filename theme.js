@@ -40,6 +40,20 @@ const theme = createTheme({
       color: mainBlack,
     },
   },
+  overrides: {
+    MuiButton: {
+      root: {
+        "&:hover": {
+          backgroundColor: "#aeffad",
+        }
+      }
+    },
+    MuiPaper: {
+      elevation4: {
+        boxShadow: "none"
+      }
+    }
+  }
 });
 
 export default theme;
