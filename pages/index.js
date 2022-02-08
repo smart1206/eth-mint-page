@@ -1,6 +1,7 @@
 import Layout from "components/layout/Layout";
 import Banner from "components/Banner";
 import Career from "components/Career";
+import Roadmap from "components/Roadmap";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -30,6 +31,7 @@ const About = () => {
     >
       <Banner />
       <Career />
+      <Roadmap />
     </Layout>
   );
 };

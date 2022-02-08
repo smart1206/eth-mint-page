@@ -1,5 +1,9 @@
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Typography, Button } from "@material-ui/core";
+import lottie from 'lottie-web';
+
+// import Moon from '../assets/animation/Top-view-moon.json';
 
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
@@ -45,8 +49,19 @@ const useStyles = makeStyles((theme) => ({
 const Banner = () => {
   const classes = useStyles();
 
+  // React.useEffect(() => {
+  //   lottie.loadAnimation({
+  //     container: document.querySelector('#moon'),
+  //     animationData: Moon,
+  //     renderer: 'svg', // "canvas", "html"
+  //     loop: true, // boolean
+  //     autoplay: true, // boolean
+  //   });
+  // }, []);
+
   return (
     <Box className={classes.bannerContainer} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+      {/* <Box id="moon" h="100%"></Box> */}
       <img src="moshi_mochi.svg" className={classes.moshiImg}></img>
       <Typography align="center" variant="h1">0/8000 MOCHI MINTED AT 0.035 ETH EACH</Typography>
       <input type="number" className={classes.mintCount} />

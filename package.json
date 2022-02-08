@@ -6,6 +6,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
     "clsx": "latest",
+    "lottie-web": "^5.8.1",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
