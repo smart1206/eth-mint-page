@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = () => {
+const Header = ({ account, onConnect }) => {
   const classes = useStyles();
   const theme = useTheme();
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -113,6 +113,10 @@ const Header = () => {
   const router = useRouter();
 
   const path = routes;
+
+  const formatAddress = (str) => {
+    return str ? str.slice(0, 5) + '...' + str.slice(str.length - 5) : '';
+  }
 
   const tabs = (
     <>
@@ -187,10 +191,13 @@ const Header = () => {
               <img className={classes.logo} src="moshi_mochi.svg"></img>
             </Link>
             {matches ? drawer : tabs}
-            <button style={{ background: "transparent", border: "none", cursor: "pointer" }}
-              onClick={() => alert('wallet connect')}>
-              <img className={classes.connect} src="connect.svg"></img>
-            </button>
+            {!account
+              ? (<button style={{ background: "transparent", border: "none", cursor: "pointer" }}
+                onClick={onConnect}>
+                <img className={classes.connect} src="connect.svg"></img>
+              </button>)
+              : (<Typography variant="h1" style={{ color: "#aeffad" }}>{formatAddress(account)}</Typography>)
+            }
           </Toolbar>
         </AppBar>
       </ElevationScroll>

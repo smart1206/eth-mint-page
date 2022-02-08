@@ -44,7 +44,6 @@ const Roadmap = () => {
           <Grid item xs={12} md={6} />
         </Grid>
         <Grid container>
-          <img src="river.svg" ></img>
           {/* <Grid item xs={12} md={6} />
           <Grid item xs={12} md={6}>
             <Box textAlign="center">

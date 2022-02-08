@@ -52,6 +52,11 @@ const theme = createTheme({
       elevation4: {
         boxShadow: "none"
       }
+    },
+    MuiAppBar: {
+      colorPrimary: {
+        zIndex: "0"
+      }
     }
   }
 });

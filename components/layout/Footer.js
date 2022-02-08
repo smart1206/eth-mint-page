@@ -44,38 +44,10 @@ const Footer = () => {
           {path.map(({ name, link }) => (
             <Grid item key={link}>
               <Link href={link}>
-                <Typography
-                  className={classes.link}
-                  style={{
-                    fontWeight: router.pathname === link && "bold",
-                    borderBottom:
-                      router.pathname === link && "1px solid #757ce8",
-                  }}
-                >
-                  {name}
-                </Typography>
+                <img style={{ width: "40px", height: "40px" }} src={`${name}.svg`}></img>
               </Link>
             </Grid>
           ))}
-        </Grid>
-        <Grid container direction="column" style={{ margin: "1.2em 0" }}>
-          <Social />
-        </Grid>
-        <Grid
-          item
-          container
-          component={"a"}
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://satoruakiyama.com"
-          justifyContent="center"
-          style={{
-            textDecoration: "none",
-          }}
-        >
-          <Typography className={classes.copylight}>
-            &copy;Satoru Akiyama
-          </Typography>
         </Grid>
       </Container>
     </footer>
